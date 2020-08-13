@@ -1,28 +1,28 @@
 {
-  "name": "@microsoft/microsoft-graph-types",
-  "description": "Types for Microsoft Graph objects",
-  "version": "1.14.1",
-  "license": "MIT",
-  "types": "microsoft-graph.d.ts",
-  "scripts": {
-    "test": "tsc && mocha spec/**.ts",
-    "dtslint": "dtslint"
-  },
-  "typescript": {
-    "definition": "microsoft-graph.d.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/microsoftgraph/msgraph-typescript-typings.git"
-  },
-  "devDependencies": {
-    "@microsoft/microsoft-graph-client": "^2.0.0",
-    "@types/chai": "^4.2.11",
-    "@types/node": "^12.12.47",
-    "chai": "^4.2.0",
-    "dtslint": "^3.6.14",
-    "mocha": "^6.2.3",
-    "typescript": "^3.9.6"
-  },
-  "dependencies": {}
+    "name": "@microsoft/microsoft-graph-types",
+    "description": "Types for Microsoft Graph objects",
+    "version": "1.14.1",
+    "license": "MIT",
+    "types": "microsoft-graph.d.ts",
+    "scripts": {
+        "test": "tsc --p tsconfig-base.json && mocha spec/**.ts",
+        "dtslint": "dtslint"
+    },
+    "typescript": {
+        "definition": "microsoft-graph.d.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoftgraph/msgraph-typescript-typings.git"
+    },
+    "devDependencies": {
+        "@microsoft/microsoft-graph-client": "^2.0.0",
+        "@types/chai": "^4.2.11",
+        "@types/node": "^12.12.47",
+        "chai": "^4.2.0",
+        "dtslint": "^3.6.14",
+        "mocha": "^6.2.3",
+        "typescript": "^3.9.6"
+    },
+    "dependencies": {}
 }
