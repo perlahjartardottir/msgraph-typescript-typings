@@ -1,7 +1,7 @@
 import {assert} from 'chai'
 
 import { getClient, randomString } from "./testHelpers"
-import {User} from '../microsoft-graph'
+import {User} from '..'
 
 declare const describe, it;
 
