@@ -119,6 +119,26 @@ steps:
       Write-Host "Moved the typings from $renamedsModelsDirectory into the local repo." -ForegroundColor Green
 
 - task: PowerShell@2
+  displayName: 'Calculate new version'
+  inputs:
+    filePath: "$(System.DefaultWorkingDirectory)/scripts/src/CalculateNewProductionVersion.ps1"
+
+- task: Npm@1
+  displayName: 'Update to new production version 1 - install in the scripts folder'
+  inputs:
+    workingDir: scripts
+    verbose: false
+    command: install
+    
+- task: Npm@1
+  displayName: 'Update to production version 2 - update version in files'
+  inputs:
+    workingDir: scripts
+    verbose: false
+    command: custom
+    customCommand: 'run update:version -- --newVersion="$(NEW_VERSION_STRING)"'
+    
+- task: PowerShell@2
   displayName: 'Git: stage and commit generated files'
   env: # [2]
     GIT_REDIRECT_STDERR: "2>&1"
