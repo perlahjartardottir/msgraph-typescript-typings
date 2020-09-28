@@ -1,0 +1,18 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# This pipeline runs the lint command which uses dtslint to validate the typings file.
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run lint
+  displayName: 'Lint typings file'

@@ -82,7 +82,7 @@ let request = new Request(
                 })
             }
         );
-        
+
 fetch(request)
 .then((response) => {
     if(response.ok === true) {
